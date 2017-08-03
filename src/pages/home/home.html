@@ -7,8 +7,39 @@
 </ion-header>
 
 <ion-content padding>
-  A maneira mais fácil de encontrar comida!
-  <p>
-    Basta clicar no botão e encontrar aonde comer!
-  </p>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <button
+          ion-button
+          icon-left
+          block
+          outline
+          type="button"
+          icon-left
+          (click)="onGetLocation()">
+          <ion-icon name="pin"> Encontrar Comida!!</ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="locationIsSet">
+      <ion-col>
+        <agm-map
+          [latitude]="location.lat"
+          [longitude]="location.lng"
+          [zoom]="15">
+          <agm-marker
+            [latitude]="location.lat"
+            [longitude]="location.lng">
+            <agm-info-window>
+              <strong>Eu estou aqui!</strong>
+            </agm-info-window>
+          </agm-marker>
+        </agm-map>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
 </ion-content>
