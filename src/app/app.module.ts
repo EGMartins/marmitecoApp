@@ -19,7 +19,7 @@ import { MapPage } from '../pages/map/map';
     BrowserModule,
     IonicModule.forRoot(MyApp),
     AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyAA2LYdfWJXcYAkLLR6e-pwV5wJ_zJeLvo'
+      apiKey: 'AIzaSyB0ufkgGVGr0AUkiJA4Rt1-IaS3AydMzjg'
     })
   ],
   bootstrap: [IonicApp],
