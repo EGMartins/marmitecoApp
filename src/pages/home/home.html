@@ -22,7 +22,9 @@
         </button>
       </ion-col>
     </ion-row>
+  </ion-grid>
 
+  <div class="wraper">
     <ion-row *ngIf="locationIsSet">
       <ion-col>
         <agm-map
@@ -36,10 +38,21 @@
               <strong>Eu estou aqui!</strong>
             </agm-info-window>
           </agm-marker>
+          <agm-marker *ngFor="let business of businesses"
+            [latitude]="business.latitude"
+            [longitude]="business.longitude">
+            <agm-info-window>
+              <strong><em>{{business.business_name}}</em></strong>
+              <hr>
+              {{business.business_info}}
+              <hr>
+              {{business.business_time}}
+              <hr>
+              {{business.business_street}}, {{business.business_number}} | {{business.business_phone}}
+            </agm-info-window>
+          </agm-marker>
         </agm-map>
       </ion-col>
     </ion-row>
-
-  </ion-grid>
-
+  </div>
 </ion-content>

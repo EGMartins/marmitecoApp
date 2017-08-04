@@ -4,7 +4,9 @@ import { NavController, ModalController, LoadingController, ToastController } fr
 
 import { Location } from '../../models/location';
 import { Geolocation } from 'ionic-native';
-import { MapPage } from '../map/map';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map';
+import { Business } from '../../models/business';
 
 
 @Component({
@@ -19,19 +21,16 @@ export class HomePage {
   };
 
   locationIsSet = false;
+  businesses: Business[];
 
   constructor(public modalCtrl: ModalController,
               private loadingController: LoadingController,
-              private toastController: ToastController) {
-
-  }
-
-  onOpenMap() {
-    const modal = this.modalCtrl.create(MapPage, {location: this.location});
-    modal.present();
+              private toastController: ToastController,
+              public http: Http) {
   }
 
   onGetLocation() {
+    const url = 'http://localhost:3000/json-map?&search=';
     const load = this.loadingController.create({
       content: "Analisando sua localização..."
     })
@@ -39,6 +38,10 @@ export class HomePage {
     Geolocation.getCurrentPosition()
       .then(
         location => {
+          this.http.get(url+location.coords.latitude+','+location.coords.longitude).map(res => res.json()).subscribe(data =>
+            { this.businesses = data,
+              console.log(this.businesses); });
+
           load.dismiss();
           this.location.lat = location.coords.latitude;
           this.location.lng = location.coords.longitude;
