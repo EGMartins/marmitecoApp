@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Renderer, ElementRef } from '@angular/core';
 import { NavController, ModalController, LoadingController, ToastController } from 'ionic-angular';
 
 
@@ -21,6 +21,9 @@ export class HomePage {
   };
 
   locationIsSet = false;
+  iconUrl = 'assets/icon/restaurant.svg'
+  myIconUrl = 'assets/icon/male.svg'
+
   businesses: Business[];
 
   constructor(public modalCtrl: ModalController,
@@ -60,6 +63,10 @@ export class HomePage {
           console.log(error);
         }
       )
+  }
+
+  buttonAnimation() {
+
   }
 
 

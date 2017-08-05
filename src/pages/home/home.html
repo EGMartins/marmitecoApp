@@ -1,6 +1,6 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
+  <ion-navbar color="primary">
+    <ion-title text-center>
       Marmiteco App
     </ion-title>
   </ion-navbar>
@@ -10,15 +10,16 @@
   <ion-grid>
     <ion-row>
       <ion-col>
-        <button
+        <button class="animated bounceInDown"
+          color="secondary"
+          round
           ion-button
           icon-left
           block
-          outline
           type="button"
           icon-left
           (click)="onGetLocation()">
-          <ion-icon name="pin"> Encontrar Comida!!</ion-icon>
+          <ion-icon name="locate" class="locate-icon"> Encontrar Comida!!</ion-icon>
         </button>
       </ion-col>
     </ion-row>
@@ -27,20 +28,22 @@
   <div class="wraper">
     <ion-row *ngIf="locationIsSet">
       <ion-col>
-        <agm-map
+        <agm-map class="map-box"
           [latitude]="location.lat"
           [longitude]="location.lng"
           [zoom]="15">
           <agm-marker
             [latitude]="location.lat"
-            [longitude]="location.lng">
+            [longitude]="location.lng"
+            [iconUrl]="myIconUrl">
             <agm-info-window>
               <strong>Eu estou aqui!</strong>
             </agm-info-window>
           </agm-marker>
           <agm-marker *ngFor="let business of businesses"
             [latitude]="business.latitude"
-            [longitude]="business.longitude">
+            [longitude]="business.longitude"
+            [iconUrl]="iconUrl">
             <agm-info-window>
               <strong><em>{{business.business_name}}</em></strong>
               <hr>
@@ -48,7 +51,7 @@
               <hr>
               {{business.business_time}}
               <hr>
-              {{business.business_street}}, {{business.business_number}} | {{business.business_phone}}
+              {{business.business_street}}, {{business.business_number}} | <ion-icon name="call" class="icon-call"></ion-icon> {{business.business_phone}}
             </agm-info-window>
           </agm-marker>
         </agm-map>
