@@ -47,11 +47,10 @@
             <agm-info-window>
               <strong><em>{{business.business_name}}</em></strong>
               <hr>
-              {{business.business_info}}
-              <hr>
-              {{business.business_time}}
-              <hr>
-              {{business.business_street}}, {{business.business_number}} | <ion-icon name="call" class="icon-call"></ion-icon> {{business.business_phone}}
+              <button ion-button
+                      round 
+                      [navPush]="detailPage"
+                      [navParams]="business">Mate a fome!</button>
             </agm-info-window>
           </agm-marker>
         </agm-map>

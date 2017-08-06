@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ModalController, LoadingController, ToastController } from 'ionic-angular';
+import { NavController, ModalController, LoadingController, ToastController } from 'ionic-angular';
 
 
 import { Location } from '../../models/location';
@@ -7,6 +7,7 @@ import { Geolocation } from 'ionic-native';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { Business } from '../../models/business';
+import { DetailPage } from '../detail/detail';
 
 
 @Component({
@@ -25,11 +26,17 @@ export class HomePage {
   myIconUrl = 'assets/icon/male.svg'
 
   businesses: Business[];
+  detailPage = DetailPage;
 
   constructor(public modalCtrl: ModalController,
+              private navCtrl: NavController,
               private loadingController: LoadingController,
               private toastController: ToastController,
               public http: Http) {
+  }
+
+  goToDetail() {
+    this.navCtrl.push(DetailPage);
   }
 
   onGetLocation() {
@@ -42,8 +49,7 @@ export class HomePage {
       .then(
         location => {
           this.http.get(url+location.coords.latitude+','+location.coords.longitude).map(res => res.json()).subscribe(data =>
-            { this.businesses = data,
-              console.log(this.businesses); });
+            { this.businesses = data });
 
           load.dismiss();
           this.location.lat = location.coords.latitude;
@@ -64,10 +70,5 @@ export class HomePage {
         }
       )
   }
-
-  buttonAnimation() {
-
-  }
-
 
 }
