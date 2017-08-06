@@ -1,5 +1,5 @@
-import { Component, Renderer, ElementRef } from '@angular/core';
-import { NavController, ModalController, LoadingController, ToastController } from 'ionic-angular';
+import { Component } from '@angular/core';
+import { ModalController, LoadingController, ToastController } from 'ionic-angular';
 
 
 import { Location } from '../../models/location';
@@ -33,7 +33,7 @@ export class HomePage {
   }
 
   onGetLocation() {
-    const url = 'http://localhost:3000/json-map?&search=';
+    const url = 'https://safe-dusk-38202.herokuapp.com/json-map?&search=';
     const load = this.loadingController.create({
       content: "Analisando sua localização..."
     })
