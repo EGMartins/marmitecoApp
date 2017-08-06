@@ -8,13 +8,12 @@ import { AgmCoreModule } from '@agm/core';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { MapPage } from '../pages/map/map';
+
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,
-    MapPage
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -27,8 +26,7 @@ import { MapPage } from '../pages/map/map';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,
-    MapPage
+    HomePage
   ],
   providers: [
     StatusBar,
