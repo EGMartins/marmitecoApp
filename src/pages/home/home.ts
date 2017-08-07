@@ -22,7 +22,7 @@ export class HomePage {
   };
 
   locationIsSet = false;
-  iconUrl = 'assets/icon/restaurant.svg'
+  iconUrl = 'assets/icon/food_ico.png'
   myIconUrl = 'assets/icon/male.svg'
 
   businesses: Business[];
