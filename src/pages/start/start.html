@@ -1,0 +1,44 @@
+
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Marmiteco</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid >
+    <div class="grid-wrapper">
+      <ion-row>
+        <ion-col>
+          <div class="instructions">
+            <h1 text-center class="animated bounceInDown"><img src="../../assets/icon/marmiteco_logo_laranja.png" alt=""></h1>
+            <h4 text-center class="animated fadeInDown">Comida express</h4>
+            <p text-center class="animated fadeInDown">
+              <em>
+                Para encontrar locais que servem comida fresquinha peritnho de você, basta clicar no botão abaixo!
+              </em>
+            </p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col>
+          <button class="animated bounceInUp start-button"
+            color="secondary"
+            round
+            ion-button
+            icon-left
+            block
+            type="button"
+            icon-left
+            [navPush]="homePage">
+            <ion-icon name="locate" class="locate-icon"> Encontrar Comida!!</ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-grid>
+</ion-content>

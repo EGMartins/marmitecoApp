@@ -6,30 +6,33 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 import { AgmCoreModule } from '@agm/core';
 
-import { MyApp } from './app.component';
+import { Marmiteco } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
+import { StartPage } from '../pages/start/start';
 
 
 @NgModule({
   declarations: [
-    MyApp,
+    Marmiteco,
     HomePage,
-    DetailPage
+    DetailPage,
+    StartPage
   ],
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(Marmiteco),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyB0ufkgGVGr0AUkiJA4Rt1-IaS3AydMzjg'
     })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
-    MyApp,
+    Marmiteco,
     HomePage,
-    DetailPage
+    DetailPage,
+    StartPage
   ],
   providers: [
     StatusBar,

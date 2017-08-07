@@ -6,55 +6,31 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <ion-grid>
-    <ion-row>
-      <ion-col>
-        <button class="animated bounceInDown"
-          color="secondary"
-          round
-          ion-button
-          icon-left
-          block
-          type="button"
-          icon-left
-          (click)="onGetLocation()">
-          <ion-icon name="locate" class="locate-icon"> Encontrar Comida!!</ion-icon>
-        </button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
-
-  <div class="wraper">
-    <ion-row *ngIf="locationIsSet">
-      <ion-col>
-        <agm-map class="map-box"
-          [latitude]="location.lat"
-          [longitude]="location.lng"
-          [zoom]="14">
-          <agm-marker
-            [latitude]="location.lat"
-            [longitude]="location.lng"
-            [iconUrl]="myIconUrl">
-            <agm-info-window>
-              <strong>Eu estou aqui!</strong>
-            </agm-info-window>
-          </agm-marker>
-          <agm-marker *ngFor="let business of businesses"
-            [latitude]="business.latitude"
-            [longitude]="business.longitude"
-            [iconUrl]="iconUrl">
-            <agm-info-window>
-              <strong><em>{{business.business_name}}</em></strong>
-              <hr>
-              <button ion-button
-                      round 
-                      [navPush]="detailPage"
-                      [navParams]="business">Mate a fome!</button>
-            </agm-info-window>
-          </agm-marker>
-        </agm-map>
-      </ion-col>
-    </ion-row>
-  </div>
+<ion-content>
+  <agm-map class="map-box"
+    [latitude]="location.lat"
+    [longitude]="location.lng"
+    [zoom]="14">
+    <agm-marker
+      [latitude]="location.lat"
+      [longitude]="location.lng"
+      [iconUrl]="myIconUrl">
+      <agm-info-window>
+        <strong>Eu estou aqui!</strong>
+      </agm-info-window>
+    </agm-marker>
+    <agm-marker *ngFor="let business of businesses"
+      [latitude]="business.latitude"
+      [longitude]="business.longitude"
+      [iconUrl]="iconUrl">
+      <agm-info-window>
+        <strong><em>{{business.business_name}}</em></strong>
+        <hr>
+        <button ion-button
+                round
+                [navPush]="detailPage"
+                [navParams]="business">Mate a fome!</button>
+      </agm-info-window>
+    </agm-marker>
+  </agm-map>
 </ion-content>

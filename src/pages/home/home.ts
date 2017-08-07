@@ -33,6 +33,7 @@ export class HomePage {
               private loadingController: LoadingController,
               private toastController: ToastController,
               public http: Http) {
+              this.onGetLocation();
   }
 
   goToDetail() {
