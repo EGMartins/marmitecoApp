@@ -10,7 +10,6 @@ import { Business } from '../../models/business';
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-detail',
   templateUrl: 'detail.html',

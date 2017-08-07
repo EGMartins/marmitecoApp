@@ -10,7 +10,6 @@ import { HomePage } from '../home/home'
  * on Ionic pages and navigation.
  */
 
-@IonicPage()
 @Component({
   selector: 'page-start',
   templateUrl: 'start.html',
