@@ -1,0 +1,100 @@
+<!--
+  Generated template for the MenuPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="primary">
+    <ion-title>Cardápio da Semana</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-row *ngIf="myBusiness?.monday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Segunda-Feira</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        {{ myBusiness?.monday }}
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.tuesday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Terça-Feira</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.tuesday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.wednesday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Quarta-Feira</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.wednesday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.thursday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Quinta-Feira</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.thursday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.friday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Sexta-Feira</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.friday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.saturday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Sábado</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.saturday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+
+  <ion-row *ngIf="myBusiness?.sunday">
+    <ion-card>
+      <ion-card-header>
+        <strong>Domingo</strong>
+      </ion-card-header>
+      <hr>
+      <ion-card-content>
+        <p>{{ myBusiness?.sunday }}</p>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+</ion-content>

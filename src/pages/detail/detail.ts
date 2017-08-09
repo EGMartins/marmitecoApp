@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 
 import { Business } from '../../models/business';
+import { MenuPage } from '../menu/menu';
 
 /**
  * Generated class for the DetailPage page.
@@ -16,6 +17,7 @@ import { Business } from '../../models/business';
 })
 export class DetailPage {
   business: Business[];
+  menuPage = MenuPage;
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 

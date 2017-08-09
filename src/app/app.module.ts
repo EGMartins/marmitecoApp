@@ -10,6 +10,7 @@ import { Marmiteco } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { DetailPage } from '../pages/detail/detail';
 import { StartPage } from '../pages/start/start';
+import { MenuPage } from '../pages/menu/menu';
 
 
 @NgModule({
@@ -17,6 +18,7 @@ import { StartPage } from '../pages/start/start';
     Marmiteco,
     HomePage,
     DetailPage,
+    MenuPage,
     StartPage
   ],
   imports: [
@@ -32,6 +34,7 @@ import { StartPage } from '../pages/start/start';
     Marmiteco,
     HomePage,
     DetailPage,
+    MenuPage,
     StartPage
   ],
   providers: [

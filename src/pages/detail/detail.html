@@ -9,27 +9,35 @@
 
 
 <ion-content padding>
-  <ion-card>
-    <ion-card-header center>
-      {{ business?.business_name }}
-    </ion-card-header>
-    <ion-card-content>
-      <h4><strong>Sobre nós:</strong></h4>
-      <p>{{ business?.business_info }}</p>
-      <hr>
-      <h4><strong>Atendimento:</strong></h4>
-      <p>{{ business?.business_time }}</p>
-      <hr>
-      <h4><strong>Liga pra gente:</strong></h4>
-      <p><ion-icon name="call" class="icon-call"></ion-icon> {{ business?.business_phone }}</p>
-      <hr>
-      <h4><strong>Onde estamos?</strong></h4>
-      <p>{{ business?.business_street }}, {{ business?.business_number }} <br>
-         {{business?.business_city}}, {{business?.business_state}}
+  <ion-row>
+    <ion-card>
+      <ion-card-header center>
+        {{ business?.business_name }}
+      </ion-card-header>
+      <ion-card-content>
+        <h4><strong>Sobre nós:</strong></h4>
+        <p>{{ business?.business_info }}</p>
+        <hr>
+        <h4><strong>Atendimento:</strong></h4>
+        <p>{{ business?.business_time }}</p>
+        <hr>
+        <h4><strong>Liga pra gente:</strong></h4>
+        <p><ion-icon name="call" class="icon-call"></ion-icon> {{ business?.business_phone }}</p>
+        <hr>
+        <h4><strong>Onde estamos?</strong></h4>
+        <p>{{ business?.business_street }}, {{ business?.business_number }} <br>
+           {{business?.business_city}}, {{business?.business_state}}
+        </p>
 
-      </p>
-
-      <hr>
-    </ion-card-content>
-  </ion-card>
+        <hr>
+      </ion-card-content>
+    </ion-card>
+  </ion-row>
+  <ion-row>
+    <button ion-button
+            round
+            block
+            [navPush]="menuPage"
+            [navParams]="business">Conheça nosso Menu!</button>
+  </ion-row>
 </ion-content>
