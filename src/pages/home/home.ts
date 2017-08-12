@@ -41,7 +41,7 @@ export class HomePage {
   }
 
   onGetLocation() {
-    const url = 'https://safe-dusk-38202.herokuapp.com/json-map?&search=';
+    const url = 'marmiteco.com/json-map?&search=';
     const load = this.loadingController.create({
       content: "Analisando sua localização..."
     })
