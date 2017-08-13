@@ -41,7 +41,7 @@ export class HomePage {
   }
 
   onGetLocation() {
-    const url = 'marmiteco.com/json-map?&search=';
+    const url = 'http://marmiteco.com/json-map?&search=';
     const load = this.loadingController.create({
       content: "Analisando sua localização..."
     })
