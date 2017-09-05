@@ -4,97 +4,120 @@
   See http://ionicframework.com/docs/components/#navigation for more info on
   Ionic pages and navigation.
 -->
-<ion-header>
+<div>
+  <ion-header>
 
-  <ion-navbar color="primary">
-    <ion-title>Cardápio da Semana</ion-title>
-  </ion-navbar>
+    <ion-navbar color="primary">
+      <ion-title>Cardápio de {{today}}</ion-title>
+    </ion-navbar>
 
-</ion-header>
+  </ion-header>
 
 
-<ion-content padding>
-  <ion-row *ngIf="myBusiness?.monday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Segunda-Feira</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        {{ myBusiness?.monday }}
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+  <ion-content padding>
+    <div *ngIf="today=='Segunda'">
+      <ion-row *ngIf="myBusiness?.monday">
+        <ion-card>
+        <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>Segunda-Feira</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            {{ myBusiness?.monday }}
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.tuesday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Terça-Feira</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.tuesday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+    <div *ngIf="today=='Terça'">
+    <ion-row *ngIf="myBusiness?.tuesday">
+      <ion-card>
+      <img src="http://lorempixel.com/400/200/food/"/>
+        <ion-card-header>
+          <strong>Terça-Feira</strong>
+        </ion-card-header>
+        <hr>
+        <ion-card-content>
+          <p>{{ myBusiness?.tuesday }}</p>
+        </ion-card-content>
+      </ion-card>
+    </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.wednesday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Quarta-Feira</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.wednesday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+    <div *ngIf="today=='Quarta'">
+      <ion-row *ngIf="myBusiness?.wednesday">
+        <ion-card>
+        <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>Quarta-Feira</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            <p>{{ myBusiness?.wednesday }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.thursday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Quinta-Feira</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.thursday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+    <div *ngIf="today=='Quinta'">
+      <ion-row *ngIf="myBusiness?.thursday">
+        <ion-card>
+        <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>Quinta-Feira</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            <p>{{ myBusiness?.thursday }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.friday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Sexta-Feira</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.friday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+    <div *ngIf="today=='Sexta'">
+      <ion-row *ngIf="myBusiness?.friday">
+        <ion-card>
+        <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>Sexta-Feira</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            <p>{{ myBusiness?.friday }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.saturday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Sábado</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.saturday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
+    <div *ngIf="today=='Sábado'">
+      <ion-row *ngIf="myBusiness?.saturday">
+        <ion-card>
+        <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>Sábado</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            <p>{{ myBusiness?.saturday }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
 
-  <ion-row *ngIf="myBusiness?.sunday">
-    <ion-card>
-      <ion-card-header>
-        <strong>Domingo</strong>
-      </ion-card-header>
-      <hr>
-      <ion-card-content>
-        <p>{{ myBusiness?.sunday }}</p>
-      </ion-card-content>
-    </ion-card>
-  </ion-row>
-</ion-content>
+    <div *ngIf="today=='Domingo'">
+      <ion-row *ngIf="myBusiness?.sunday">
+        <ion-card>
+          <img src="http://lorempixel.com/400/200/food/"/>
+          <ion-card-header>
+            <strong>FInal de semana! <br>Que tal algo especial:</strong>
+          </ion-card-header>
+          <hr>
+          <ion-card-content>
+            <p>{{ myBusiness?.sunday }}</p>
+          </ion-card-content>
+        </ion-card>
+      </ion-row>
+    </div>
+  </ion-content>
+</div>
