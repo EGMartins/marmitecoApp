@@ -23,4 +23,12 @@ export class StartPage {
     console.log('ionViewDidLoad StartPage');
   }
 
+  openFacebook() {
+  	window.open('http://facebook.com/marmitecoapp', '_system')
+  }
+
+  openHome() {
+  	window.open('http://marmiteco.com', '_system')
+  }
+
 }
